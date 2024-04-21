@@ -1,15 +1,19 @@
 package hong.demo.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.third.service.Outfit;
 
-@Component //("boyDress") == bean-name
 public class BoyDress implements Outfit {
 
-    private final String BOY_DRESS = "JEAN";
+    private String bdress;
+
+    public BoyDress(String bdress){
+        this.bdress = bdress;
+    }
     
     public void wear(){
-        System.out.println("BOY wear " + BOY_DRESS);
+        System.out.println("BOY wear " + bdress);
     }
 }
