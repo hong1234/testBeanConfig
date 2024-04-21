@@ -1,22 +1,24 @@
 package hong.demo.service;
 
-import third.service.Outfit;
+import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+
+import com.third.service.Outfit;
 
 @Component
 public class Boy {
-    //@Autowired
-    //@Qualifier("bDress")
-    public Outfit outfit;
 
-    //public Boy(@Qualifier("bDress") Outfit outfit){
+    // @Autowired
+    // @Qualifier("boyDress")
+    private Outfit outfit;
+
+    // public Boy(@Qualifier("boyDress") Outfit outfit){
     //    this.outfit = outfit;
-    //}
+    // }
 
     @Autowired
-    public void setOutfit(@Qualifier("bDress") Outfit outfit) {
+    public void setOutfit(@Qualifier("boyDress") Outfit outfit) {
         this.outfit = outfit;
     }
 
