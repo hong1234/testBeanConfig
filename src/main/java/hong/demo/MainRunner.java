@@ -12,8 +12,8 @@ public class MainRunner {
 
     public static void main(String[] args) {
 
-        // Class<?>[] configurations = new Class<?>[]{AppConfig.class};
-        Class<?>[] configurations = new Class<?>[]{AppConfig.class, BeanConfig.class};
+        Class<?>[] configurations = new Class<?>[]{AppConfig.class};
+        // Class<?>[] configurations = new Class<?>[]{AppConfig.class, BeanConfig.class};
 
         ApplicationContext context = new AnnotationConfigApplicationContext(configurations);
 
@@ -21,7 +21,8 @@ public class MainRunner {
             System.out.println(name);
         }
 
-        AppService asv = context.getBean(AppService.class);
+        // AppService asv = context.getBean(AppService.class);
+        AppService asv = context.getBean("appService", AppService.class);
         asv.displayAllOutFits();
         
     }
