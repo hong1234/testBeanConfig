@@ -12,8 +12,8 @@ public class MainRunner {
 
     public static void main(String[] args) {
 
-        Class<?>[] configurations = new Class<?>[]{AppConfig.class};
-        // Class<?>[] configurations = new Class<?>[]{AppConfig.class, BeanConfig.class};
+        // Class<?>[] configurations = new Class<?>[]{AppConfig.class};
+        Class<?>[] configurations = new Class<?>[]{AppConfig.class, BeanConfig.class};
 
         ApplicationContext context = new AnnotationConfigApplicationContext(configurations);
 
