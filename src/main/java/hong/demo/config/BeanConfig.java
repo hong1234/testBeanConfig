@@ -5,28 +5,29 @@ import org.springframework.context.annotation.Configuration;
 // import org.springframework.context.annotation.PropertySource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.env.Environment;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.third.service.*;
-// import hong.demo.service.BoyDress;
 
 @Configuration
 // @PropertySource("classpath:application.properties")
 public class BeanConfig {
-
-    // @Value("${boy.dress}")
-    // private String bdress;
     
-    @Value("${girl.dress}")
-    private String gdress;
+    // @Value("${girl.dress}")
+    // private String gdress;
 
     // @Bean
-    // public Outfit boyDress() {
-    //     return new BoyDress(bdress);
+    // public Outfit girlDress() {
+    //     return new GirlDress(gdress);
     // }
+
+    @Autowired
+    private Environment env;
 
     @Bean
     public Outfit girlDress() {
-        return new GirlDress(gdress);
+        return new GirlDress(env.getProperty("girl.dress"));
     }
 
     @Bean
